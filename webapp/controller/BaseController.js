@@ -11,6 +11,7 @@ sap.ui.define(
 		var auth = false;
 		var runouttime = false;
 		var consolerErrors = true;
+		var URL_MAIN="http://localhost:4100/api"
 		return Controller.extend(
 			"estandar.csti.controller.BaseController", {
 				getURL: function () {
@@ -271,7 +272,7 @@ sap.ui.define(
 						window.history.go(-1);
 					} else {
 						var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-						oRouter.navTo("main", true);
+						oRouter.navTo("Home", true);
 					}
 				},
 				adder: function (modelName, jsonCombo, update, rowData) {

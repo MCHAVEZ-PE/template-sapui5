@@ -9,7 +9,16 @@ sap.ui.define([
             oRouter.getRoute("Home").attachPatternMatched(this.configurationInit, this);
         },
         configurationInit: function () {
-            console.log("hola")
+            // console.log("hola")
+        },
+        irParametros: function () {
+            oRouter.navTo("Parametros");
+        },
+        irDashboard: function () {
+            oRouter.navTo("Dashboard");
+        }
+        ,irTablaSedes:function () {
+            oRouter.navTo("Sedes");
         }
     });
 });

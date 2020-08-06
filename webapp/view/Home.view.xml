@@ -1,7 +1,35 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="estandar.csti.controller.Home" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core">
 
-    <Page showHeader="true" title="" showFooter="true" showNavButton="false">
-        <content></content>
+    <Page showHeader="true" title="Compensar" showFooter="true" showNavButton="false">
+        <content>
+            <VBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="60%" justifyContent="SpaceAround" renderType="Div" visible="true">
+                <items>
+                    <GenericTile header="Valores Parametrizados" press="irParametros">
+                        <TileContent>
+                            <NumericContent value="2" indicator="None" icon="sap-icon://action-settings" />
+                            
+                        </TileContent>
+                    </GenericTile>
+                    
+                    <GenericTile header="Dashboard de Recaudo" press="irDashboard">
+                        <TileContent>
+                            <NumericContent value=" "  indicator="None" icon="sap-icon://key-user-settings" />
+                            <!-- <core:Icon src="sap-icon://key-user-settings"></core:Icon> -->
+                        </TileContent>
+                    </GenericTile>
+                    
+                </items>
+            </VBox>
+            <VBox alignItems="Center" justifyContent="Center">
+                <items>
+                  <GenericTile header="Lista de Sedes No permitidas" press="irTablaSedes">
+                        <TileContent>
+                            <NumericContent value=" "  indicator="None" icon="sap-icon://key-user-settings" />
+                        </TileContent>
+                    </GenericTile>
+                </items>
+            </VBox>
+        </content>
 
     </Page>
 
