@@ -14,8 +14,7 @@
                     <GenericTile header="Dashboard de Recaudo" press="irDashboard">
                         <TileContent>
                             <NumericContent value=" "  indicator="None" icon="sap-icon://key-user-settings" />
-                            <!-- <core:Icon src="sap-icon://key-user-settings"></core:Icon> -->
-                        </TileContent>
+                          </TileContent>
                     </GenericTile>
                     
                 </items>
