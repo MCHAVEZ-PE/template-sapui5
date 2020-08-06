@@ -1,0 +1,66 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="estandar.csti.controller.Sedes"
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core">
+
+    <Page showHeader="true" title="Lista de Sedes no permitidas" showFooter="true" showNavButton="true" navButtonPress="navBack">
+        <content>
+            <VBox class="container">
+                <form:Form>
+                    <form:formContainers>
+                        <form:FormContainer>
+                            <form:formElements>
+                                <form:FormElement visible="true">
+                                    <form:label>
+                                        <Label text="Nombre de la Sede"/>
+                                    </form:label>
+                                    <form:fields>
+                                        <Input id="oValSede"></Input>
+                                        <Button press="oGrabar" text="Grabar"></Button>
+                                    </form:fields>
+                                </form:FormElement>
+                            </form:formElements>
+                        </form:FormContainer>
+                       
+                    </form:formContainers>
+                    <form:layout>
+                        <form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" columnsM="2" labelSpanL="1" emptySpanL="2" emptySpanM="4" labelSpanM="2" labelSpanS="12" />
+                    </form:layout>
+                </form:Form>
+            </VBox>
+            <VBox class="container">
+                <Table id="tablaParametros" width="100%" items="{path:'sedes_no_validas>/data_sedes'}">
+                    <columns>
+                        <Column>
+                            <Text text="código SAP"></Text>
+                        </Column>
+                        <Column>
+                            <Text text="código SSAS"></Text>
+                        </Column>
+                        <Column>
+                            <Text text="Descripción"></Text>
+                        </Column>
+                        <Column />
+                        <Column />
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text='{sedes_no_validas>COD_SAP}'></Text>
+                                <Text text='{sedes_no_validas>COD_SSAS}'></Text>
+                                <Text text='{sedes_no_validas>DESCRIPCION}'></Text>
+                                <Button press="oEditar"  icon="sap-icon://edit" tooltip="editar"></Button>
+                                <Button press="oEliminar" icon="sap-icon://delete" tooltip="Eliminar"></Button>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+
+        </content>
+
+
+    </Page>
+
+</mvc:View>

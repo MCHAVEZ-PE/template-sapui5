@@ -1,0 +1,71 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="estandar.csti.controller.Parametros"
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core">
+
+    <Page showHeader="true" title="Valores parametrizados" showFooter="true" showNavButton="true" navButtonPress="navBack">
+        <content>
+            <VBox class="container">
+                <form:Form>
+                    <form:formContainers>
+                        <form:FormContainer>
+                            <form:formElements>
+                                <form:FormElement visible="true">
+                                    <form:label>
+                                        <Label text="Valor"/>
+                                    </form:label>
+                                    <form:fields>
+                                        <Input id="_valorParametro"></Input>
+                                    </form:fields>
+                                </form:FormElement>
+                            </form:formElements>
+                        </form:FormContainer>
+                        <form:FormContainer>
+                            <form:formElements>
+                                <form:FormElement>
+                                    <form:fields>
+                                        <Button press="oGrabar" text="Grabar"></Button>
+                                    </form:fields>
+                                </form:FormElement>
+                            </form:formElements>
+                        </form:FormContainer>
+                    </form:formContainers>
+                    <form:layout>
+                        <form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" columnsM="2" labelSpanL="2" emptySpanL="2" emptySpanM="2" labelSpanM="2" labelSpanS="12" />
+                    </form:layout>
+                </form:Form>
+            </VBox>
+            <VBox class="container">
+                <Table id="tablaParametros" width="100%" items="{path:'parametros>/data'}">
+                    <columns>
+                        <Column>
+                            <Text text="Campo"></Text>
+                        </Column>
+                        <Column>
+                            <Text text="Descripcion"></Text>
+                        </Column>
+                        <Column>
+                            <Text text="Valor"></Text>
+                        </Column>
+                        <Column />
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text='{parametros>parametro}'></Text>
+                                <Text text='{parametros>descripcion}'></Text>
+                                <Text text='{parametros>valor}'></Text>
+                                <Button press="oEditar" text="editar"></Button>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+
+        </content>
+
+
+    </Page>
+
+</mvc:View>

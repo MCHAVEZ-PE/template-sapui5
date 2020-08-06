@@ -1,0 +1,117 @@
+<mvc:View controllerName="estandar.csti.controller.Dashboard" xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form" xmlns="sap.m">
+    <Page title="Dashboard Recaudo"  showNavButton="true" navButtonPress="navBack">
+        <content>
+            <Panel headerText="Filtros" expandable="true">
+                <content>
+                    <VBox>
+                        <form:Form width="100%">
+                            <form:formContainers>
+                                <form:FormContainer>
+                                    <form:formElements>
+                                        <form:FormElement label="Datos del paciente" visible="true">
+                                            <form:fields>
+                                                <Input visible="true"></Input>
+                                            </form:fields>
+                                        </form:FormElement>
+                                        <form:FormElement label="Número de Autorización" visible="true">
+                                            <form:fields>
+                                                <Input visible="true"></Input>
+                                            </form:fields>
+                                        </form:FormElement>
+
+                                    </form:formElements>
+                                </form:FormContainer>
+                                <form:FormContainer>
+                                    <form:formElements>
+                                        <form:FormElement label="Periodo" visible="true">
+                                            <form:fields>
+                                                <DatePicker visible="true"></DatePicker>
+                                            </form:fields>
+                                        </form:FormElement>
+                                        <form:FormElement>
+                                            <form:fields>
+                                                <Button text="Buscar"></Button>
+                                            </form:fields>
+                                        </form:FormElement>
+                                    </form:formElements>
+                                </form:FormContainer>
+                            </form:formContainers>
+                            <form:layout>
+                                <form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" columnsM="2" labelSpanL="3" labelSpanM="4" labelSpanS="12" />
+                            </form:layout>
+                        </form:Form>
+                    </VBox>
+                </content>
+            </Panel>
+            <Panel>
+                <content>
+
+                    <VBox>
+                        <Table width="100%" id="oTableExport" items="{path:'/'}">
+                            <headerToolbar>
+                                <Toolbar>
+                                    <Title text="Detalle de Citas" level="H2" />
+                                    <ToolbarSpacer></ToolbarSpacer>
+                                    <Button icon="sap-icon://download" press="onDataExport" />
+                                </Toolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column width="auto" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                    <Text text="CODIGO"></Text>
+                                </Column>
+                                <Column width="auto" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                    <Text text="Datos del paciente"></Text>
+                                </Column>
+
+                                <Column width="auto" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                    <Text text="Descripción"></Text>
+                                </Column>
+                                <Column width="auto" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                    <Text text="Numero de Autorización"></Text>
+                                </Column>
+                                <Column width="auto" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                    <Text text="CUPS "></Text>
+                                </Column>
+                                <Column width="auto" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                    <Text text="PSE(CUS)"></Text>
+                                </Column>
+                                <Column width="auto" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                    <Text text="Programa"></Text>
+                                </Column>
+                                <Column width="auto" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                    <Text text="Punto de atención"></Text>
+                                </Column>
+                                <Column width="auto" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                    <Text text="Fecha y Hora de pago"></Text>
+                                </Column>
+                                <Column width="auto" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                    <Text text="Medio de pago"></Text>
+                                </Column>
+                                <Column width="auto" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                    <Text text="Estado de pago"></Text>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{CODIGO}"></Text>
+                                        <Text text="{PACIENTE}"></Text>
+                                        <Text text="{DESCRIPCION}"></Text>
+                                        <Text text="{NRO_AUTORIZACIÓN}"></Text>
+                                        <Text text="{CUPS}"></Text>
+                                        <Text text="{PSE}"></Text>
+                                        <Text text="{PROGRAMA}"></Text>
+                                        <Text text="{LUGAR_ATENCION}"></Text>
+                                        <Text text="{FECHA_HORA}"></Text>
+                                        <Text text="{MEDIO_PAGO}"></Text>
+                                        <Text text="{ESTADO_PAGO}"></Text>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </VBox>
+                </content>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>
